@@ -183,7 +183,7 @@
                     const data = await response.json();
 
                     if (response.ok) {
-                        quote_text.textContent = data.text;
+                        quote_text.textContent = data.text.replace(", type.fit","");
                         cite.textContent = data.author;
                     } else {
                         quote_text.textContent = "An error occured";
