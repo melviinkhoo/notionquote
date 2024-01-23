@@ -184,7 +184,7 @@
 
                     if (response.ok) {
                         quote_text.textContent = data.quote;
-                        cite.textContent = data.author;
+                        cite.textContent = data.author.replace(", type.fit","");
                     } else {
                         quote_text.textContent = "An error occured";
                         console.log(data);
