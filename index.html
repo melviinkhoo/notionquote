@@ -201,7 +201,7 @@
                 if (response.ok && data.length > 0) {
                     random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
                     cite.textContent = random_quote.author;
-                    quote_text.textContent = random_quote.text;
+                    quote_text.textContent = random_quote.text.replace(", type.fit","");
                 } else {
                     quote_text.textContent = "An error occured";
                     console.log(data);
