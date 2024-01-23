@@ -183,7 +183,7 @@
                     const data = await response.json();
 
                     if (response.ok) {
-                        quote_text.textContent = data.text.replace(", type.fit","");
+                        quote_text.textContent = data.quote;
                         cite.textContent = data.author;
                     } else {
                         quote_text.textContent = "An error occured";
@@ -200,8 +200,8 @@
                 const data = await response.json();
                 if (response.ok && data.length > 0) {
                     random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
-                    cite.textContent = random_quote.author;
-                    quote_text.textContent = random_quote.text.replace(", type.fit","");
+                    cite.textContent = random_quote.author.replace(", type.fit","");
+                    quote_text.textContent = random_quote.text;
                 } else {
                     quote_text.textContent = "An error occured";
                     console.log(data);
